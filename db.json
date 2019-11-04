@@ -473,6 +473,7 @@
         {
           "id": 8,
           "name": "Nuggets",
+          "city": "Denver",
           "logo": "nuggets.png",
           "poll": "false",
           "count": 0,
