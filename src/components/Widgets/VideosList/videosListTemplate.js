@@ -2,7 +2,6 @@ import React from 'react';
 
 import { Link } from 'react-router-dom';
 import CardInfo from '../CardInfo/cardInfo';
-import { tsPropertySignature } from '@babel/types';
 import style from './videosListTemplate.module.css';
 
 const VideosListTemplate = (props) =>{

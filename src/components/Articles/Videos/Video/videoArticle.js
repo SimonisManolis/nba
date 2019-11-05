@@ -3,7 +3,6 @@ import axios from 'axios';
 import {URL} from '../../../../config';
 import style from '../../articles.module.css';
 import VideoHeader from './videoHeader';
-import VideoListTemplate from '../../../Widgets/VideosList/videosListTemplate';
 import VideosRelated from '../../../Widgets/VideosList/VideosRelated/videosRelated';
 
 

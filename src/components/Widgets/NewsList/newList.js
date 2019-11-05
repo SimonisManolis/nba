@@ -7,6 +7,7 @@ import style from './newsList.module.css';
 import Button from '../Buttons/buttons';
 import CardInfo from '../CardInfo/cardInfo';
 
+
 class NewsList extends Component {
    
     state = {
@@ -78,6 +79,40 @@ class NewsList extends Component {
                    
                 ))
                 break;
+            case('cardMain'):
+                    template = this.state.items.map( (item,i) => (
+                        <CSSTransition
+                            classNames={{
+                                enter:style.newslist_wrapper,
+                                enterActive:style.newslist_wrapper_enter
+                            }}
+                            timeout={500}
+                            key={i}
+                        >
+                            <Link to={`/articles/${item.id}`} key={i}>
+                                <div className={style.newsMainList_wrapper}>
+                                    <div className={style.newsMainList_image}
+                                        style={{
+                                            background:`url(/images/articles/${item.image})`
+                                        }}
+                                    >
+                                        <div></div>
+                                    </div>  
+                                    <div className={style.newsMainList_details}>
+                                        <CardInfo 
+                                            teams={this.state.teams} 
+                                            team={item.team}
+                                            date={item.date}
+                                            />
+                                        <h2>{item.title}</h2>
+
+                                        
+                                    </div>    
+                                </div>
+                            </Link>
+                        </CSSTransition>
+                    ))
+                    break;
             default:
                 template=null;    
             

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import style from './buttons.module.css';
-import { template } from '@babel/core';
+
 
 const buttons = (props) =>{
     let template = null;
