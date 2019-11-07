@@ -5,7 +5,7 @@ import CardInfo from '../CardInfo/cardInfo';
 import style from './videosListTemplate.module.css';
 
 const VideosListTemplate = (props) =>{
-    console.log(props);
+    
     return props.data.map( (item,i)=>{
     
        return <Link to={`/videos/${item.id}`} key={i}>
@@ -24,6 +24,7 @@ const VideosListTemplate = (props) =>{
                         date={item.date}
                         />
                     <h2>{item.title}</h2>
+                    
 
                     
                 </div>    
