@@ -1,0 +1,7 @@
+.labelError {
+    font-size: .8rem;
+    color: red;
+    font-weight: 500;
+    margin-top: 5px;
+    padding: 5px;
+}
