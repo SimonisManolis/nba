@@ -14,7 +14,7 @@ const sideNavigation = (props) => {
                     maxWidth: '65%'
                 }}
             >
-                <SideNavItems/>
+                <SideNavItems {...props}/>
             </SideNav>
         </div>
     )

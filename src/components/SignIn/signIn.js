@@ -64,7 +64,7 @@ class SignIn extends Component {
 
         newElement.touched = element.blur;
         newFormdata[element.id] = newElement;
-        console.log(newFormdata);
+        
         this.setState({
             formdata:newFormdata
         })
