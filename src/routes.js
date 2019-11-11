@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import {  Switch } from 'react-router-dom';
 
 //COMPONENTS
 import Home from './components/Home/home';
@@ -10,6 +10,8 @@ import NewsMain from './components/Articles/News/Main/newsMain';
 import VideosMain from './components/Articles/Videos/Main/videosMain';
 import SignIn from './components/SignIn/signIn';
 import Dashboard from './components/Dashboard/dashboard';
+import PublicRoute from './components/AuthRoutes/publicRoutes';
+import PrivateRoute from './components/AuthRoutes/privateRoutes';
 
 const Routes =(props) => {
     return(
@@ -17,13 +19,13 @@ const Routes =(props) => {
         
             <Layout user={props.user}>
                 <Switch>
-                    <Route path="/" exact component={Home}/>
-                    <Route path="/news" exact component={NewsMain}/>
-                    <Route path="/articles/:id" exact component={NewsArticle} />
-                    <Route path="/videos" exact component={VideosMain}/>
-                    <Route path="/videos/:id" exact component={VideoArticle} />
-                    <Route path="/sign-in" exact component={SignIn}/>
-                    <Route path="/dashboard" exact component = {Dashboard}/>
+                    <PublicRoute {...props} restricted={false} path="/" exact component={Home}/>
+                    <PublicRoute {...props} restricted={false} path="/news" exact component={NewsMain}/>
+                    <PublicRoute {...props} restricted={false} path="/articles/:id" exact component={NewsArticle} />
+                    <PublicRoute {...props} restricted={false} path="/videos" exact component={VideosMain}/>
+                    <PublicRoute {...props} restricted={false} path="/videos/:id" exact component={VideoArticle} />
+                    <PublicRoute {...props} restricted={true} path="/sign-in" exact component={SignIn}/>
+                    <PrivateRoute {...props}  path="/dashboard" exact component = {Dashboard}/>
                 </Switch>
             </Layout>
            
